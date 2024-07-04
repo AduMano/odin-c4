@@ -1,0 +1,59 @@
+So how does connect four work.... ?
+Its like a tic tac toe, but the area is wider, instead of 3x3 its 6x7 (6 rows, 7 cols).
+and instead of staying in place, you can only insert colors on column by the top part
+and let it fall (if theres a space). If theres 4 piece connection then that current player wins.
+
+Lets break this up into smaller pieces.
+
+We need the board 6x7 (42 Cells)
+We need the piece (21 per Player) (Yellow for Player 1, Red for Player 2)
+We need players (Player 1 and 2) (Each player has their own piece)
+
+Game Mechanics,
+Player one always the first to drop their piece, then player two will then drop a piece after.
+Each player will take turns until they form a 4 line pattern, hence "connect four".
+Everything else is okay and needs to be tested in order to achieve the goal (By setting up expected
+tests). but...
+
+`HOW DO I IMPLEMENT THE WINNING CONDITION?`
+
+Hmm... Its not like tic tac toe where I can implement a winning pattern, this one is free, i mean it
+can form a line anywhere (only if they are connected, just like tictactoe, but free as in any place of
+the grid of 6x7).
+
+Well, if make it as graph instead of 2d array, (Ill be using 2d array still for retreiving) each cells
+in the board is a vertex, can hold possible location around it (Similar to how mine sweeper, the node is
+in the middle and any node around that is connected)
+
+That was just for the area, but.. why would I use a graph and not directly use 2d array? I dont know as well.
+I just think that using graph is great for connections, if only I find a way where I can connect the vertex
+to another of its kind (depending on the player's piece (red or yellow)) like if i place a piece (vertex), it
+will fall down and stop only if it collides to a solid platform (Either the bottom part of the board or theres
+a piece under) and once that is placed, it will check for its sorroundings:
+
+[ ][ ][ ]
+[ ][.][ ]
+[#][#][.]
+
+Here is a visualization, it will check all the cells arround it, we are currently the "." character in a cell
+and check arround if it theres anyone with the same kind ".", if there is one, it will set up its parent
+attribute to that kind to form a connection, and try to traverse if it continues. But what if there are multiples?
+theres only one parent, so i guess using this method isnt going to work. But wait.. this will work even in multiple
+examples, instead of setting up parent, once I drop off my piece, and stops, it will check it in all directions
+and tries to continue, if one of the directions manage to pull off and get the same kind 4 times, then that means
+we have a winner!
+
+Another problem is when I put off a piece, how do i make the piece fall since I can only put piece on the top of the board?
+well i loop through unless the piece hits the bottom part of the board or hits a piece below.
+
+Entities:
+
+BOARD:
+
+
+PLAYER:
+  
+
+PIECE:
+
+
