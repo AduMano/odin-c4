@@ -48,12 +48,30 @@ well i loop through unless the piece hits the bottom part of the board or hits a
 
 Entities:
 
+GAME:
+  @players
+  @board
+  @turn
+
+  #game_setup
+  #game_start
+  #game_over?
+
+
 BOARD:
+  @board
+  
+  #render_board
+  #place_piece
+  #pattern_found?
 
 
 PLAYER:
+  @piece
+  @name
   
 
 PIECE:
-
+  @color
+  @symbol
 
