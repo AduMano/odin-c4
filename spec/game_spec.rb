@@ -1,6 +1,5 @@
-# frozen_string_literal: true
-
 require_relative('../lib/game')
+require_relative('../lib/board')
 
 # Game Class
 describe Game do
@@ -65,7 +64,9 @@ describe Game do
     end
   end
 
-  describe '#game_over' do
+  describe '#game_over?' do
+    subject(:game_is_over) { described_class.new }
+
   end
 
   describe '#display_winner' do
