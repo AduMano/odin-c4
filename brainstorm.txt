@@ -57,6 +57,10 @@ GAME:
   #game_start
   #game_over?
 
+  #register_player
+  #display_winner
+  #display_tied
+
 
 BOARD:
   @board
@@ -64,6 +68,7 @@ BOARD:
   #render_board
   #place_piece
   #pattern_found?
+  #board_full?
 
 
 PLAYER:
