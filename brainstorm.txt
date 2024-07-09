@@ -69,6 +69,7 @@ BOARD:
   #place_piece
   #pattern_found?
   #board_full?
+  #build_board
 
 
 PLAYER:
