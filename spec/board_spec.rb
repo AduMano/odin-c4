@@ -7,11 +7,17 @@ describe Board do
 
     context 'When called, this will create a 2d array containing vertices' do
       matcher :be_all_vertex do
-        match { |element| element.type.eql?(Vertex) }
+        match do |board|
+          flattened_board = board.flatten
+
+          flattened_board.all? { |element| element.kind_of?(Vertex) }
+        end
       end
 
-      matcher :be_in_grid do |grid_size|
-        
+      matcher :be_all_seven_columns do
+        match do |board|
+          board.all? { |column| column.count.eql?(7) }
+        end
       end
 
       it 'Board must not be empty' do
@@ -21,12 +27,17 @@ describe Board do
 
       it 'Must have 6 Y-Axis Grid' do
         build.build_board
-        expect(build.board).to be_in_grid(6)
+        expect(build.board.length).to eq(6)
+      end
+
+      it 'Must have 7 X-Axis Grid' do
+        build.build_board
+        expect(build.board).to be_all_seven_columns
       end
 
       it 'Every Elements must be a type of Vertex' do
         build.build_board
-        expect(build.board).to be_all_vertex
+        expect(build.board).to be_all_vertex_class
       end
     end
   end
