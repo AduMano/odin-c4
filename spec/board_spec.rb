@@ -6,10 +6,9 @@ describe Board do
     subject(:build) { described_class.new }
 
     context 'When called, this will create a 2d array containing vertices' do
-      matcher :be_all_vertex do
+      matcher :be_all_vertex_class do
         match do |board|
           flattened_board = board.flatten
-
           flattened_board.all? { |element| element.kind_of?(Vertex) }
         end
       end
@@ -21,7 +20,6 @@ describe Board do
       end
 
       it 'Board must not be empty' do
-        build.build_board
         expect(build.board).to_not be_empty
       end
 

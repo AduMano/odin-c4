@@ -18,7 +18,7 @@ class Board
         column.column = j
 
         # Setup Neighbors Boundaries
-        columns.setup_neighbors(i, j, @board)
+        column.setup_neighbors(i, j, @board)
       end
     end
   end
