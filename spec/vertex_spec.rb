@@ -17,8 +17,12 @@ describe Vertex do
         # |@|@|@|@|
         # |@|@|@|@|
         it 'must have 3 neighbors' do
+          counter = 0
+
           vertex_setup.setup_neighbors(row, column, board_sample)
-          expect(vertex_setup.neighbors.length).to eq(3)
+          vertex_setup.neighbors.each { |key, value| counter += 1 if value.kind_of?(Vertex) }
+
+          expect(counter).to eq(3)
         end
       end
 
@@ -32,8 +36,12 @@ describe Vertex do
         # |@| |*| |
         # |@| | | |
         it 'must have 8 neighbors' do
+          counter = 0 
+
           vertex_setup.setup_neighbors(row, column, board_sample)
-          expect(vertex_setup.neighbors.length).to eq(8)
+          vertex_setup.neighbors.each { |key, value| counter += 1 if value.kind_of?(Vertex) }
+
+          expect(counter).to eq(8)
         end
       end
 
@@ -47,8 +55,12 @@ describe Vertex do
         # | | |@|@|
         # |@|@|@|@|
         it 'must have 5 neighbors' do
+          counter = 0
+
           vertex_setup.setup_neighbors(row, column, board_sample)
-          expect(vertex_setup.neighbors.length).to eq(5)
+          vertex_setup.neighbors.each { |key, value| counter += 1 if value.kind_of?(Vertex) }
+
+          expect(counter).to eq(5)
         end
       end
     end
