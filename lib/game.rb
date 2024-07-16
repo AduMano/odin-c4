@@ -1,9 +1,12 @@
 # frozen_string_literal: true
 
 require_relative('player')
+require_relative('modules/mod_inputs')
 
 # Game Class
 class Game
+  include(Inputs)
+
   attr_accessor :players, :board, :turn
 
   def initialize
@@ -17,15 +20,12 @@ class Game
   end
 
   def game_setup
-
   end
 
   def game_start
-
   end
 
   def game_over?
-
   end
 
   def display_winner
@@ -33,6 +33,6 @@ class Game
   end
 
   def display_tied
-
+    puts 'TIE! No one wins!'
   end
 end
