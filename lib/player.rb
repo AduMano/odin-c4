@@ -4,7 +4,7 @@
 class Player
   attr_accessor :color, :name, :mark
 
-  def initialize(color, name = "Player_#{rand(1000..2000)}", mark = '⛭')
+  def initialize(color, name, mark)
     @name = name
     @mark = mark
     @color = color
