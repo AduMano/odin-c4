@@ -2,10 +2,11 @@
 
 # Player Class
 class Player
-  attr_accessor :name, :mark
+  attr_accessor :color, :name, :mark
 
-  def initialize(name = "Player_#{rand(1000..2000)}", mark = '⛭')
+  def initialize(color, name = "Player_#{rand(1000..2000)}", mark = '⛭')
     @name = name
     @mark = mark
+    @color = color
   end
 end
