@@ -44,6 +44,7 @@ class Game
       puts "#{@players[@turn % 2].name}'s Turn!"
       column = inp_place_mark
       row = @board.place_piece(@players[@turn % 2], column)
+      next unless row
 
       break if game_over?(row, column)
 
