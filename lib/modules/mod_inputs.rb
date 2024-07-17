@@ -31,12 +31,12 @@ module Inputs
 
   def inp_place_mark
     loop do
-      print 'Type where you want to place your mark (1 - 6): '
+      print 'Type where you want to place your mark (1 - 7): '
       column = gets.chomp
 
-      return column.to_i if column.to_i.between?(1, 6)
+      return column.to_i if column.to_i.between?(1, 7)
 
-      puts 'Invalid Input. You can only enter 1 to 6'
+      puts 'Invalid Input. You can only enter 1 to 7'
     end
   end
 end

@@ -24,6 +24,11 @@ class Board
     end
   end
 
+  def board_full?
+    flattened_board = @board.flatten
+    flattened_board.all? { |vertex| !vertex.slot.nil? }
+  end
+
   def place_piece(player, column)
     return false unless @board[0][column - 1].slot.nil?
 
@@ -73,6 +78,18 @@ class Board
   end
 
   def render_board
+    puts "\n====================="
+    puts ' 1  2  3  4  5  6  7 '
+
+    @board.each do |row|
+      row.each do |vertex|
+        piece = vertex.slot
+        print piece.nil? ? '| |' : "|#{piece.mark.colorize(piece.color)}|"
+      end
+
+      puts ''
+    end
+    puts
   end
 
   private
@@ -81,6 +98,7 @@ class Board
     return true if counter.eql?(4)
     return false if current.neighbors[direction].nil?
     return false if current.neighbors[direction].slot.nil?
+    return false unless current.neighbors[direction].slot.color.eql?(current.slot.color)
 
     check_pattern_dir(direction, current.neighbors[direction], counter + 1)
   end

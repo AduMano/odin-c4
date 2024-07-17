@@ -261,8 +261,8 @@ describe Board do
         board.place_piece(player_one, 3)
         board.place_piece(player_two, 4)
         board.place_piece(player_one, 5)
-        board.place_piece(player_two, 3)
-        board.place_piece(player_one, 3) # Lands on row 3, 4th column
+        board.place_piece(player_two, 4)
+        board.place_piece(player_one, 4) # Lands on row 3, 4th column
 
         expect(board.pattern_found?(2, 3)).to be_truthy
       end
