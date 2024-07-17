@@ -17,7 +17,7 @@ class Vertex
     }
   end
 
-  def setup_neighbors(row, column, board) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity
+  def setup_neighbors(row, column, board) # rubocop:disable Metrics/AbcSize
     @neighbors[:left] = board[row][column - 1] if column - 1 >= 0 # left
     @neighbors[:top_left] = board[row - 1][column - 1] if column - 1 >= 0 && row - 1 >= 0 # Top Left
     @neighbors[:top] = board[row - 1][column] if row - 1 >= 0 # Top
