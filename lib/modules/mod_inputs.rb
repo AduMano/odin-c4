@@ -28,4 +28,15 @@ module Inputs
       puts 'Invalid input. please be sure the input is between the given range'
     end
   end
+
+  def inp_place_mark
+    loop do
+      print 'Type where you want to place your mark (1 - 6): '
+      column = gets.chomp
+
+      return column.to_i if column.to_i.between?(1, 6)
+
+      puts 'Invalid Input. You can only enter 1 to 6'
+    end
+  end
 end

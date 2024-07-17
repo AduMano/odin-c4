@@ -12,3 +12,8 @@ AllCops:
   Exclude:
     - './spec/*'
 
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/PerceivedComplexity:
+  Max: 20

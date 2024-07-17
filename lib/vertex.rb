@@ -7,18 +7,14 @@ class Vertex
   def initialize
     @row = nil
     @column = nil
-    @neighbors = {
-      left: nil,
-      top_left: nil,
-      top: nil,
-      top_right: nil,
-
-      right: nil,
-      bottom_right: nil,
-      bottom: nil,
-      bottom_left: nil
-    }
     @slot = nil
+    @neighbors = {
+      left: nil, top_left: nil,
+      top: nil, top_right: nil,
+
+      right: nil, bottom_right: nil,
+      bottom: nil, bottom_left: nil
+    }
   end
 
   def setup_neighbors(row, column, board) # rubocop:disable Metrics/AbcSize,Metrics/CyclomaticComplexity,Metrics/PerceivedComplexity

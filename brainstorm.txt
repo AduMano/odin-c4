@@ -65,11 +65,11 @@ GAME:
 BOARD:
   @board
   
-  #render_board
-  #place_piece
-  #pattern_found?
-  #board_full?
-  #build_board
+  #render_board | WIP
+  #place_piece | DONE
+  #pattern_found? | DONE
+  #board_full? | DONE
+  #build_board | DONE
 
 
 PLAYER:

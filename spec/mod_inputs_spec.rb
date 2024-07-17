@@ -69,4 +69,32 @@ describe Inputs do
       end
     end
   end
+
+  describe '#inp_place_mark' do 
+    let(:game) { Class.new { extend Inputs } }
+    
+    context 'When input is valid (1 to 6)' do
+      before do 
+        valid_input = '4'
+        allow(game).to receive(:gets).and_return('a', 'al', valid_input)
+      end
+
+      it 'Returns 4' do
+        expect(game.inp_place_mark).to eq(4)
+      end
+    end
+
+    context 'When input is invalid (out of range)' do 
+      before do 
+        valid_input = '6'
+        allow(game).to receive(:gets).and_return('a', 'al', valid_input)
+      end
+
+      it 'Must get error twice' do 
+        error_message = 'Invalid Input. You can only enter 1 to 6'
+        expect(game).to receive(:puts).with(error_message).twice
+        game.inp_place_mark
+      end
+    end
+  end
 end
